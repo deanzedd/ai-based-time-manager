@@ -3,7 +3,8 @@ import argparse
 import os
 import datetime
 from src.Scheduler.AIscheduler import TodoListAIScheduler
-from src.model import Task, SlotScore, SlotScorer, TimeSlot, Priority
+from src.model import Task, TimeSlot, Priority
+from src.Scheduler.scheduler import SlotScore, SlotScorer
 
 def main(args):
     #os.makedirs(args.output_dir, exist_ok=True)

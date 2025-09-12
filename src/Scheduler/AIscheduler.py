@@ -1,7 +1,7 @@
 import datetime
 from typing import List, Dict, Optional, Tuple
-from src.model import Task, SlotScore, SlotScorer, TimeSlot
-from src.Scheduler.scheduler import CalendarManager
+from src.model import Task, TimeSlot
+from src.Scheduler.scheduler import CalendarManager, SlotScore, SlotScorer
 
 # --- AI Agent ---
 
