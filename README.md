@@ -15,7 +15,7 @@
     hoặc 
 
     ```bash
-    https://github.com/phudatdam/ai-based-time-manager.git
+    git clone https://github.com/phudatdam/ai-based-time-manager.git
 
 1. **Chạy thử file `main.py`:**
    
