@@ -1,9 +1,9 @@
 import datetime
-from typing import List, Dict, Optional, Tuple
-from src.model import Task, TimeSlot
-from src.Scheduler.scheduler import CalendarManager, SlotScore, SlotScorer
+from typing import List, Dict, Optional
+from src.models import Task, TimeSlot
+from src.scheduler.CalendarManager import CalendarManager
+from src.scheduler.SlotScorer import SlotScorer
 
-# --- AI Agent ---
 
 class TodoListAIScheduler:
     def __init__(self, settings: Optional[Dict] = None):
@@ -41,7 +41,6 @@ class TodoListAIScheduler:
         tasks_already_scheduled_today = [task for task in self.tasks if task.scheduled_start and task.scheduled_start.date() == target_date.date()]
 
         # 2. Sắp xếp các task chờ xử lý theo độ ưu tiên và deadline
-        #pending_tasks.sort(key=lambda t: (t.priority.value, t.due_date if t.due_date else datetime.datetime.max), reverse=True)
         pending_tasks.sort(key=lambda t: (-t.priority.value, t.due_date if t.due_date else datetime.datetime.max))
 
         # 3. Cập nhật thông tin dự án cho SlotScorer
