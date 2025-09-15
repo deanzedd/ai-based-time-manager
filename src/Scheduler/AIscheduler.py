@@ -41,7 +41,8 @@ class TodoListAIScheduler:
         tasks_already_scheduled_today = [task for task in self.tasks if task.scheduled_start and task.scheduled_start.date() == target_date.date()]
 
         # 2. Sắp xếp các task chờ xử lý theo độ ưu tiên và deadline
-        pending_tasks.sort(key=lambda t: (t.priority.value, t.due_date if t.due_date else datetime.datetime.max), reverse=True)
+        #pending_tasks.sort(key=lambda t: (t.priority.value, t.due_date if t.due_date else datetime.datetime.max), reverse=True)
+        pending_tasks.sort(key=lambda t: (-t.priority.value, t.due_date if t.due_date else datetime.datetime.max))
 
         # 3. Cập nhật thông tin dự án cho SlotScorer
         self.slot_scorer.update_scheduled_tasks_for_projects(tasks_already_scheduled_today)
@@ -83,7 +84,7 @@ class TodoListAIScheduler:
                 print(f"Không tìm thấy slot phù hợp cho task: {task.description}")
         
         # Cập nhật lại danh sách tasks chính
-        self.tasks = [t for t in self.tasks if t.scheduled_start is not None] + pending_tasks # Kết hợp task đã có và task mới lên lịch
+        #self.tasks = [t for t in self.tasks if t.scheduled_start is not None] + pending_tasks # Kết hợp task đã có và task mới lên lịch
 
     def get_schedule_for_date(self, date: datetime.datetime) -> List[Task]:
         return sorted(

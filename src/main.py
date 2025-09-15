@@ -33,10 +33,15 @@ def main(args):
     task2 = Task(id=2, description="Chuẩn bị slide thuyết trình", duration_minutes=90, priority=Priority.CRITICAL, due_date=today + datetime.timedelta(days=2), preferred_time="morning")
     task3 = Task(id=3, description="Kiểm tra email và trả lời", duration_minutes=45, priority=Priority.MEDIUM, energy_level="medium")
     task4 = Task(id=4, description="Nghiên cứu tính năng mới", duration_minutes=60, priority=Priority.MEDIUM, due_date=today + datetime.timedelta(days=3), project_id="ProjectB")
+    task4_1 = Task(id=41, description="Nghiên cứu tính năng mới1", duration_minutes=60, priority=Priority.MEDIUM, due_date=today + datetime.timedelta(days=1), project_id="ProjectB")
+
     task5 = Task(id=5, description="Đi gặp khách hàng", duration_minutes=180, priority=Priority.HIGH, due_date=today + datetime.timedelta(hours=5), preferred_time="afternoon", project_id="ClientX") # Giả định là task ngoài giờ làm việc cần xử lý
     task6 = Task(id=6, description="Dọn dẹp bàn làm việc", duration_minutes=15, priority=Priority.LOW)
     task7 = Task(id=7, description="Họp nhóm hàng tuần", duration_minutes=60, priority=Priority.HIGH, due_date=today + datetime.timedelta(days=2), scheduled_start=today.replace(hour=10, minute=0), scheduled_end=today.replace(hour=11, minute=0)) # Task đã có lịch
+    task8 = Task(id=8, description="Đi Chơi", duration_minutes=60, priority=Priority.LOW, due_date=today + datetime.timedelta(days=2), scheduled_start=today.replace(hour=19, minute=0), scheduled_end=today.replace(hour=20, minute=0))
+    task8_1 = Task(id=81, description="Đi Chơi nig", duration_minutes=60, priority=Priority.LOW, due_date=today + datetime.timedelta(days=2), scheduled_start=today.replace(hour=9, minute=0), scheduled_end=today.replace(hour=12, minute=0))
 
+    
     scheduler.add_task(task1)
     scheduler.add_task(task2)
     scheduler.add_task(task3)
@@ -44,6 +49,9 @@ def main(args):
     scheduler.add_task(task5)
     scheduler.add_task(task6)
     scheduler.add_task(task7) # Thêm task đã có lịch
+    scheduler.add_task(task8)
+    scheduler.add_task(task4_1)
+    scheduler.add_task(task8_1)
     
     #--- print output ---
     # Lên lịch cho ngày hôm nay
