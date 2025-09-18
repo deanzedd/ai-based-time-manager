@@ -1,6 +1,6 @@
 import datetime
 from typing import List, Dict, Optional, Tuple
-from src.model import Task, TimeSlot, Priority
+from src.models import Task, TimeSlot, Priority
 
 class SlotScore:
     def __init__(self, total: float, factors: Dict[str, float]):

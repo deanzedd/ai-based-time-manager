@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-CUDA_VISIBLE_DEVICES=1 python3 -m src.main\
-=======
 export PYTHONIOENCODING=utf-8
 python3 -m src.cli \
->>>>>>> upstream/main
         --work_start_hour 8 \
         --work_end_hour 23 \
         --min_buffer_minutes 15 \
         --slot_duration_minutes 30 \
-<<<<<<< HEAD
-        --group_by_project True
-=======
         --group_by_project True <<EOF
 1,Hoàn thành báo cáo dự án A,120,HIGH,2025-09-15T00:00:00,, ,ProjectA,,
 2,Chuẩn bị slide thuyết trình,90,CRITICAL,2025-09-16T00:00:00,morning,, ,,,
@@ -21,4 +14,4 @@ python3 -m src.cli \
 7,Họp nhóm hàng tuần,60,HIGH,2025-09-16T00:00:00,,, , ,2025-09-14T10:00:00,2025-09-14T11:00:00
 done
 EOF
->>>>>>> upstream/main
+
